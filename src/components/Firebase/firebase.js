@@ -14,14 +14,34 @@ class Firebase {
   constructor() {
       console.log('[sk]config', config);
     app.initializeApp(config);
+
+    /* Firebase APIs */
     this.auth = app.auth();
     this.db = app.database();
+
+    /* Social Sign In Method Provider */
+
+    this.googleProvider = new app.auth.GoogleAuthProvider();
+    this.facebookProvider = new app.auth.FacebookAuthProvider();
+    this.twitterProvider = new app.auth.TwitterAuthProvider();
   }
     // *** Auth API ***
     doCreateUserWithEmailAndPassword = (email, password) =>
         this.auth.createUserWithEmailAndPassword(email, password);
+
     doSignInWithEmailAndPassword = (email, password) =>
         this.auth.signInWithEmailAndPassword(email, password);
+    doSignInWithGoogle = () =>
+      this.auth.signInWithPopup(this.googleProvider);
+    doSignInWithFacebook = () =>
+      this.auth.signInWithPopup(this.facebookProvider);
+    doSignInWithTwitter = () =>
+      this.auth.signInWithPopup(this.twitterProvider);
+
+    doSendEmailVerification = () =>
+      this.auth.currentUser.sendEmailVerification({
+        url: process.env.REACT_APP_CONFIRMATION_EMAIL_REDIRECT,
+      });
     doSignOut = () => this.auth.signOut();
     doPasswordReset = email => this.auth.sendPasswordResetEmail(email);
     doPasswordUpdate = password =>
