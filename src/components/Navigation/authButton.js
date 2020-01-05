@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-import SignOutButton from '../SignOut';
+import SignOutButton from '../Authentication/SignOut';
 import * as ROUTES from '../../constants/routes';
 import useStyles from './useStyles';
 

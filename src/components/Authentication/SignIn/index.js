@@ -10,8 +10,8 @@ import Container from '@material-ui/core/Container';
 import EmailIcon from '@material-ui/icons/Email';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import Divider from '@material-ui/core/Divider';
-import { withFirebase } from '../Firebase';
-import * as ROUTES from '../../constants/routes';
+import { withFirebase } from '../../Firebase';
+import * as ROUTES from '../../../constants/routes';
 import SignInFormBase from './signInFormBase';
 
 const SignInPage = () => (

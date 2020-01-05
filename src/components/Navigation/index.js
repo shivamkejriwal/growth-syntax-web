@@ -9,7 +9,7 @@ import Drawer from '@material-ui/core/Drawer';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import Divider from '@material-ui/core/Divider';
 
-import { AuthUserContext } from '../Session';
+import { AuthUserContext } from '../Authentication/Session';
 import useStyles from './useStyles';
 import RouteList from './routeList';
 import AuthButton from './authButton';
