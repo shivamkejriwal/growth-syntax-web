@@ -12,7 +12,7 @@ const config = {
 };
 class Firebase {
   constructor() {
-      console.log('[sk]config', config);
+    // console.log('[sk]config', config);
     app.initializeApp(config);
 
     /* Firebase APIs */
