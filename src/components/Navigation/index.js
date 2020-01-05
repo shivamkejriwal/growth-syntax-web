@@ -12,7 +12,7 @@ import Divider from '@material-ui/core/Divider';
 import { AuthUserContext } from '../Session';
 import useStyles from './useStyles';
 import RouteList from './routeList';
-import AuthButton from './AuthButton';
+import AuthButton from './authButton';
 
 const Navigation = () => (
     <AuthUserContext.Consumer>
@@ -25,11 +25,9 @@ const Navigation = () => (
 
 const ApplicationBar = ({ authUser }) => {
     const classes = useStyles();
-    const [open, setOpen] = React.useState(true);
+    const [open, setOpen] = React.useState(false);
     const handleDrawerOpen = () => setOpen(true);
     const handleDrawerClose = () => setOpen(false);
-    
-    console.log(`[sk]drawer state - ${open}`);
     return (
         <div className={classes.root}>
         <AppBar position="static">
