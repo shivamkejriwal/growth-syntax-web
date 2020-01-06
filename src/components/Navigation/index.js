@@ -11,7 +11,7 @@ import Divider from '@material-ui/core/Divider';
 
 import { AuthUserContext } from '../Authentication/Session';
 import useStyles from './useStyles';
-import RouteList from './routeList';
+import SidebarList from './routeList';
 import AuthButton from './authButton';
 
 const Navigation = () => (
@@ -52,7 +52,7 @@ const ApplicationBar = ({ authUser }) => {
                 </IconButton>
             </div>
             <Divider />
-            <RouteList/>
+            <SidebarList/>
         </Drawer>
         </div>
     );

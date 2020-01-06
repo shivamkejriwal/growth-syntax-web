@@ -1,6 +1,7 @@
 import app from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/database';
+import 'firebase/firestore';
 
 const config = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -18,6 +19,7 @@ class Firebase {
     /* Firebase APIs */
     this.auth = app.auth();
     this.db = app.database();
+    this.firestore = app.firestore()
 
     /* Social Sign In Method Provider */
 
@@ -50,5 +52,11 @@ class Firebase {
     // *** User API ***
     user = uid => this.db.ref(`users/${uid}`);
     users = () => this.db.ref('users');
+
+    // *** Articles API ***
+    getArticles = (limit = 3) => this.firestore
+                  .collection('Articles')
+                  .orderBy('date','desc')
+                  .limit(limit);
 }
 export default Firebase;
