@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import Typography from '@material-ui/core/Typography';
 import { withFirebase } from '../../Firebase';
-
+import CollapsedArticlePaper from '../collapsedArticlePaper';
 
 class MarketAndEconomyArticles extends Component {
     constructor(props) {
@@ -38,11 +37,8 @@ class MarketAndEconomyArticles extends Component {
         return this.state.articles.map(article => {
             return (
                 <ListItem key={article.id}>
-                    <Typography variant='body1'>
-                        {article.title} 
-                    </Typography>
-                </ListItem>
-                
+                    <CollapsedArticlePaper article={article}/>
+                </ListItem>  
             );
         });
     }

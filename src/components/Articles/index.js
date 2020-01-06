@@ -5,7 +5,7 @@ import Tab from '@material-ui/core/Tab';
 import ArticleList from './Recent/articleList';
 import Topics from './topics';
 
-var divStyle = {
+const divStyle = {
   marginTop: '20px'
 };
 
