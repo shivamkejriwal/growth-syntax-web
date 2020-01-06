@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import Article from './article';
-import { withFirebase } from '../Firebase';
+import Article from '../article';
+import { withFirebase } from '../../Firebase';
 
 
 class ArticleList extends Component {

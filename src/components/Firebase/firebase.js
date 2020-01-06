@@ -58,5 +58,10 @@ class Firebase {
                   .collection('Articles')
                   .orderBy('date','desc')
                   .limit(limit);
+    getArticlesByCategory = (category, limit = 3) => this.firestore
+                  .collection('Articles')
+                  .where('category', '==', category)
+                  .orderBy('date','desc')
+                  .limit(limit);
 }
 export default Firebase;

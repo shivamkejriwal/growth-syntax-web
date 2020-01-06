@@ -1,8 +1,9 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import ArticleList from './articleList';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import ArticleList from './Recent/articleList';
+import Topics from './topics';
 
 var divStyle = {
   marginTop: '20px'
@@ -42,7 +43,7 @@ const ArticlesPages = () => {
         <Tab label='Recent' ></Tab>
       </Tabs>
       <TabPanel value={value} index={0}>
-        Topic's
+        <Topics/>
       </TabPanel>
       <TabPanel value={value} index={1}>
         <ArticleList/>
