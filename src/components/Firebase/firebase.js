@@ -63,5 +63,9 @@ class Firebase {
                   .where('category', '==', category)
                   .orderBy('date','desc')
                   .limit(limit);
+    // *** Market API ***
+    getMarketData = (key) => this.firestore
+                  .collection('Companies')
+                  .where(key, "==", true);
 }
 export default Firebase;
