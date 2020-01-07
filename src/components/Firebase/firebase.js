@@ -69,5 +69,7 @@ class Firebase {
                   .where(key, '==', true);
     getAdvancersDecliners = (key) => this.firestore
                   .collection('Market-Data').doc('Advancers-Decliners');
+    getSectors = (key) => this.firestore.collection('Sector');
+    getIndustries = (key) => this.firestore.collection('Industry');
 }
 export default Firebase;

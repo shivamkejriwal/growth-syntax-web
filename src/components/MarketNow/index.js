@@ -1,32 +1,68 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Typography from '@material-ui/core/Typography';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
+import Button from '@material-ui/core/Button';
+import InfoIcon from '@material-ui/icons/Info';
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import { withAuthorization } from '../Authentication/Session';
-import TickerTable from './TickerTable';
+import MarketTable from './MarketTable';
 import MarketSlider from './MarketSlider';
+import Sectors from './Sectors';
+import Industries from './Industries';
+
+// import { withStyles } from '@material-ui/core/styles';
+// const CenteredButton = withStyles({
+//   root: {
+//     justifyContent: 'center'
+//   },
+// })(Button);
 
 const divStyle = {
   marginTop: '50px'
 };
 
-const TabPanel = (props) => {
-  const { children, value, index } = props;
-  return (
-    <div  role='tabpanel'
-          hidden={value !== index}>
-      {children}
-    </div>
-  );
-};
+
+class CollapsedSection extends Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+          show: false
+      };
+      this.toggleHidden = this.toggleHidden.bind(this);
+  }
+
+  toggleHidden() {
+      this.setState({
+          show: !this.state.show
+      });
+  }
+
+  render() {
+      return (
+          <div>
+              <Button onClick={this.toggleHidden}
+                      variant="outlined"
+                      color="primary">
+                <InfoIcon/>
+                Load Individual Industry Details (more granular)
+                <div>
+                  { this.state.show
+                        ? <ArrowDownwardIcon/>
+                        : null
+                  }
+                </div>
+              </Button>
+              <div style={divStyle}>
+                { this.state.show
+                      ? <Industries/>
+                      : null
+                }
+              </div>
+          </div>
+      )
+  }
+}
 
 const MarketNowPage = () => {
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
   return (
     <div style={divStyle}>
       <Typography variant='h5'
@@ -34,27 +70,15 @@ const MarketNowPage = () => {
                   gutterBottom>
           Market Now
       </Typography>
-      <Tabs indicatorColor='primary'
-            textColor='secondary'
-            variant='fullWidth'
-            value={value}
-            onChange={handleChange}
-            centered>
-        <Tab label='Gainers' ></Tab>
-        <Tab label='Losers' ></Tab>
-        <Tab label='Active' ></Tab>
-      </Tabs>
-      <TabPanel value={value} index={0}>
-        <TickerTable dataType='mostBought'/>
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <TickerTable dataType='mostSold'/>
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <TickerTable dataType='mostTraded'/>
-      </TabPanel>
+      <MarketTable/>
       <div style={divStyle}>
         <MarketSlider />
+      </div>
+      <div style={divStyle}>
+        <Sectors/>
+      </div>
+      <div style={divStyle}>
+        <CollapsedSection/>
       </div>
     </div>
   );
