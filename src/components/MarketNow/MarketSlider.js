@@ -64,8 +64,8 @@ class MarketSlider extends Component {
         return (
             <Grid container spacing={2} alignItems="center">
                 <Grid item>
-                    <Typography gutterBottom>
-                        Advancers
+                    <Typography color='primary' gutterBottom>
+                        Advancers ({this.state.advancers})
                     </Typography>
                     <TrendingUpIcon />
                 </Grid>
@@ -78,8 +78,8 @@ class MarketSlider extends Component {
                     value={this.state.advancers} />
                 </Grid>
                 <Grid item>
-                    <Typography gutterBottom>
-                        Decliners
+                    <Typography color='secondary' gutterBottom>
+                        Decliners ({this.state.decliners})
                     </Typography>
                     <TrendingDownIcon />
                 </Grid>
