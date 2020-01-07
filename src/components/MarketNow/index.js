@@ -4,8 +4,10 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { withAuthorization } from '../Authentication/Session';
 import TickerTable from './TickerTable';
+import MarketSlider from './MarketSlider';
+
 const divStyle = {
-  marginTop: '20px'
+  marginTop: '50px'
 };
 
 const TabPanel = (props) => {
@@ -51,6 +53,9 @@ const MarketNowPage = () => {
       <TabPanel value={value} index={2}>
         <TickerTable dataType='mostTraded'/>
       </TabPanel>
+      <div style={divStyle}>
+        <MarketSlider />
+      </div>
     </div>
   );
 }

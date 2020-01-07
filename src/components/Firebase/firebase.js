@@ -66,6 +66,8 @@ class Firebase {
     // *** Market API ***
     getMarketData = (key) => this.firestore
                   .collection('Companies')
-                  .where(key, "==", true);
+                  .where(key, '==', true);
+    getAdvancersDecliners = (key) => this.firestore
+                  .collection('Market-Data').doc('Advancers-Decliners');
 }
 export default Firebase;
