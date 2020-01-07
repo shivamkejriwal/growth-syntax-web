@@ -7,3 +7,6 @@ export const ACCOUNT = '/account';
 export const ADMIN = '/admin';
 export const PASSWORD_FORGET = '/pw-forget';
 export const ARTICLES = '/articles';
+export const COMPANY = '/company';
+export const MARKETNOW = '/marketnow';
+export const COMMENTARY = '/commentary';

@@ -9,6 +9,9 @@ import PasswordForgetPage from '../Authentication/PasswordForget';
 import HomePage from '../Home';
 import AccountPage from '../Account';
 import ArticlesPage from '../Articles';
+import CompanyPage from '../Company';
+import MarketNowPage from '../MarketNow';
+import CommentaryPage from '../Commentary';
 // import AdminPage from '../Admin';
 import * as ROUTES from '../../constants/routes';
 
@@ -22,8 +25,11 @@ const AppRoutes = () => (
             component={PasswordForgetPage}
         />
         <Route path={ROUTES.ARTICLES} component={ArticlesPage} />
+        <Route path={ROUTES.COMPANY} component={CompanyPage} />
         <Route path={ROUTES.HOME} component={HomePage} />
         <Route path={ROUTES.ACCOUNT} component={AccountPage} />
+        <Route path={ROUTES.MARKETNOW} component={MarketNowPage} />
+        <Route path={ROUTES.COMMENTARY} component={CommentaryPage} />
         {/* <Route path={ROUTES.ADMIN} component={AdminPage} /> */}
     </Container>  
 );

@@ -9,6 +9,9 @@ import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import HomeIcon from '@material-ui/icons/Home';
 import FlightLandIcon from '@material-ui/icons/FlightLand';
+import BusinessIcon from '@material-ui/icons/Business';
+import AssessmentIcon from '@material-ui/icons/Assessment';
+import SpeakerNotesIcon from '@material-ui/icons/SpeakerNotes';
 
 import * as ROUTES from '../../constants/routes';
 
@@ -27,7 +30,7 @@ const SidebarList = () => (
             <ListItemIcon>
                 <HomeIcon />
             </ListItemIcon>
-            <ListItemText primary="HOME" />
+            <ListItemText primary="Home" />
         </ListItem>
     </Link>
     <Link to={ROUTES.ACCOUNT}>
@@ -35,7 +38,7 @@ const SidebarList = () => (
             <ListItemIcon>
                 <AccountBoxIcon />
             </ListItemIcon>
-            <ListItemText primary="ACCOUNT" />
+            <ListItemText primary="Account" />
         </ListItem>
     </Link>
     <Link to={ROUTES.ARTICLES}>
@@ -43,7 +46,31 @@ const SidebarList = () => (
             <ListItemIcon>
                 <LibraryBooksIcon />
             </ListItemIcon>
-            <ListItemText primary="ARTICLES" />
+            <ListItemText primary="Curated Articles" />
+        </ListItem>
+    </Link>
+    <Link to={ROUTES.COMPANY}>
+        <ListItem button>
+            <ListItemIcon>
+                <BusinessIcon />
+            </ListItemIcon>
+            <ListItemText primary="Company" />
+        </ListItem>
+    </Link>
+    <Link to={ROUTES.MARKETNOW}>
+        <ListItem button>
+            <ListItemIcon>
+                <AssessmentIcon />
+            </ListItemIcon>
+            <ListItemText primary="Market Now" />
+        </ListItem>
+    </Link>
+    <Link to={ROUTES.COMMENTARY}>
+        <ListItem button>
+            <ListItemIcon>
+                <SpeakerNotesIcon />
+            </ListItemIcon>
+            <ListItemText primary="Commentary" />
         </ListItem>
     </Link>
 </List>
